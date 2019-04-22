@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Home Page</title>
 </head>
 <body>
-    <h1>Home Test</h1>
+    <h1>Categorii produse</h1>
+    <ul>
+        {% for c in categorii %}
+            <li><a href="#">{{ c.name }}</a></li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
