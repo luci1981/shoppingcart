@@ -8,7 +8,7 @@
     <h1>Categorii produse</h1>
     <ul>
         {% for c in categorii %}
-            <li><a href="#">{{ c.name }}</a></li>
+        <li><a href="{% url 'shop:product_list' c.id %}">{{ c.name }}</a></li> </br> {{ c.pk }} {{ c.id }}
         {% endfor %}
     </ul>
 
