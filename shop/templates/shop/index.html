@@ -7,8 +7,10 @@
 <body>
     <h1>Categorii produse</h1>
     <ul>
-        {% for c in categorii %}
-        <li><a href="{% url 'shop:product_list' c.id %}">{{ c.name }}</a></li> </br> {{ c.pk }} {{ c.id }}
+        {% for categ in categorii %}
+            <li><a href="{% url 'shop:products' categ.pk %}">{{ categ.name }}</a></li>
+            <p>Created: {{ categ.created_at }}<br>Updated: {{ categ.updated_at }}</p>
+
         {% endfor %}
     </ul>
 
