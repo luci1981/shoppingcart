@@ -10,5 +10,7 @@ def category_list(request):
     return render(request, 'shop/index.html', {'categorii':categorii})
 
 def product_list(request, pk):
+    categorii = Category.objects.all()
     produse = get_object_or_404(Category, pk=pk)
-    return render(request, 'shop/product_list.html', {'produse':produse})
+    context = {'produse': produse, 'categorii':categorii}
+    return render(request, 'shop/product_list.html', context)
