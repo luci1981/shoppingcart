@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product list</title>
-</head>
-<body>
+{% extends 'shop/base.html' %}
 
-    <h1><a href="{% url 'shop:home' %}">Categorii produse</a> /
-        {{ produse.name }}
-    </h1>
+{% block content %}
 
-    {% for prod in produse.products.all %}
-        <li>{{ prod.name }}</li>
-    {% endfor %}
-</body>
-</html>
+        <h3><a href="{% url 'shop:home' %}">Categorii produse</a> /
+            {{ produse.name }}
+        </h3>
+
+        {% for prod in produse.products.all %}
+            <li>{{ prod.name }}</li>
+        {% endfor %}
+
+
+{% endblock %}

@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-</head>
-<body>
-    <h1>Categorii produse</h1>
+{% extends 'shop/base.html' %}
+
+{% block content %}
+    <h3>Categorii produse</h3>
     <ul>
         {% for categ in categorii %}
             <li><a href="{% url 'shop:products' categ.pk %}">{{ categ.name }}</a></li>
@@ -14,5 +10,4 @@
         {% endfor %}
     </ul>
 
-</body>
-</html>
+{% endblock %}
