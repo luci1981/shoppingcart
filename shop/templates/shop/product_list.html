@@ -2,13 +2,13 @@
 
 {% block content %}
 
-        <h3><a href="{% url 'shop:home' %}">Categorii produse</a> /
-            {{ produse.name }}
-        </h3>
-
+    <h3><a href="{% url 'shop:home' %}">Categorii produse</a> /
+        {{ produse.name }}
+    </h3>
+    <ul>
         {% for prod in produse.products.all %}
             <li>{{ prod.name }}</li>
         {% endfor %}
-
+    </ul>
 
 {% endblock %}
